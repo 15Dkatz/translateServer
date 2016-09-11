@@ -18,6 +18,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.json());
 
+app.get('/', function(req,res) {
+  res.json({home: "home endpoint"})
+});
+
 var firebaseApp = firebase.initializeApp(config);
 var textRef = firebase.database().ref();
 
